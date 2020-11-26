@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content%}
+{% if success %}
+    <div class="alert alert-success">{{success}}</div>
+    {% endif %}
+    <div style="background-color:rgb(41, 41, 80);">
+    <div class="wrapper">
+        <div class="inner">
+            <form action="" method="POST" enctype="multipart/form-data">
+                
+                <h3 >Registration Form</h3>
+                <br>
+
+                <div class="form-group">
+                    <div class="form-wrapper">
+                       <label for=""></label>
+                        <input type="text" class="form-control" name="ename" placeholder="Enter Name" >
+                    </div>
+                </div>
+                
+                    <div class="form-group">
+                    <div class="form-wrapper">
+                        <label for=""></label>
+                        <input type="text" class="form-control" name="address" placeholder="Enter Address">
+                    </div>
+                </div>
+                <div class="form-group">
+                <div class="form-wrapper">
+                    <label for=""></label>
+                    <input type="number" class="form-control" name="phone" placeholder="Enter Phone">
+                </div>
+                </div>
+                
+                <div class="form-group">
+                <div class="form-wrapper">
+                    <label for=""></label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                </div>
+                </div>
+                <div class="form-group">
+                <div class="form-wrapper">
+                    <label for=""></label>
+                    <input type="file" class="form-control" name="img" placeholder="Upload Image">
+                </div>
+                </div>
+                
+                
+                
+                    <button type="submit" id="btnsubmit" style="margin-left: 80px;" class="btn btn-primary">REGISTER</button>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

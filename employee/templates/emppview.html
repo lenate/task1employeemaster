@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content%}
+<body>
+    <h1 class="text-white text-center"> EMPLOYEE VIEW</h1><br>
+    <div class="container">
+        <table class="table table-striped ">
+            <tr style="background-color: rgb(41, 41, 80);">
+                <th style="color:turquoise">Employee id</th>
+                <th style="color:turquoise">Emp_Name</th>
+                <th style="color:turquoise"> Address</th>
+                <th style="color:turquoise">Phone</th>
+                <th style="color:turquoise">Email</th>
+                <th style="color:turquoise">Image</th>
+                <th colspan="2" class="text-center">Action</th>
+               
+                
+                
+            </tr>
+           
+                            {% for d in data %}
+                            <tr style="background-color:rgb(41, 41, 80);">
+                                <td style="color: white;">{{d.id}}</td>
+                               <td style="color: white;">{{ d.EmployeeName}}</td>
+                               
+                                <td style="color: white;">{{ d.Address}}</td>
+                                <td style="color: white;">{{ d.Phone}}</td>
+                                <td style="color: white;">{{ d.Email }}</td>
+                                <td style="color: white;"> <img src="media/{{ d.Image }}" alt="noimage" width="50" height="50"></td>
+                                <td style="text-align:left"><a href="{% url 'delemp' em_id=d.id %}"  onclick="return confirm(' Want To Delete ?')" class="btn btn-sm btn-outline-danger">Delete</a>  </td>
+                                <td><a href="{% url 'editemp' em_id=d.id %}" class="btn btn-outline-primary  btn-sm">Edit</a></td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                 </body>
+{% endblock content %}
